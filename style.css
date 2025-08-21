@@ -1,0 +1,169 @@
+body {
+    background: radial-gradient(circle at top, #000000, #272829, #4a4949);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.flex {
+    display: flex;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.large {
+    font-size: 125%
+}
+
+.small {
+    font-size: 75%
+}
+
+.invis-text {
+    font-size: 0px;
+}
+
+.fixedPosition {
+    position: fixed;
+}
+
+.nav-blur {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    height: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 90;
+}
+
+.navbar {
+   width: 98%;
+   position: fixed;
+   top: 0;
+   background-color: black;
+   display: flex;
+   align-items: center;
+   text-align: left;
+   justify-content: space-between;
+   padding-left: 15px;
+   padding-right: 15px;
+   margin-top: 10px;
+   border-radius: 10px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+   color: white;
+   z-index: 100;
+}
+
+.logo {
+    margin-right: 15px;
+    padding: 0px;
+}
+
+.site-title {
+    vertical-align: middle;
+    align-items: center;
+    margin: 0px;
+}
+
+.navlink {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+}
+
+.navlink:hover {
+    cursor: pointer;
+    text-shadow: 0 0 0.1px white;
+}
+
+.staatliches {
+    font-family: staatliches;
+}
+
+.index-header, #games, #websites {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#games {
+    height: 100%;
+    width: 100%;
+}
+
+#websites {
+    height: 100%;
+    width: 100%;
+}
+
+.aboutContact-header {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    z-index: 10;
+    position: relative;
+}
+
+
+
+
+.self-promo-link {
+    vertical-align: middle;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.self-promo-link:hover {
+    -webkit-transform: translateY(-2px);
+	transform: translateY(-2px);
+}
+
+.self-promo {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.footer-text {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.footer-text img {
+    margin-right: 5px;
+}
