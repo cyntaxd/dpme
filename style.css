@@ -46,6 +46,10 @@ body {
     position: fixed;
 }
 
+.hidden {
+    display: none;
+}
+
 .nav-blur {
     position: fixed;
     top: 0;
@@ -118,6 +122,71 @@ body {
 #websites {
     height: 100%;
     width: 100%;
+}
+
+.popup-wrapper {
+    width: 45%;
+    min-height: 40vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid white;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.popup-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.popup-wrapper img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1f1e1e;
+    border: 2px solid white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(145, 144, 144, 0.5);
+    border-radius: 10px;
+}
+
+#popup-content {
+    margin-bottom: 10px;
+}
+
+.closeBtn {
+    width: 35%;
+    height: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #5c5c5c;
+    color: white;
+    border-radius: 5px;
+}
+
+.webBtn {
+    width: 50%;
+    height:45px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #808080;
+    color: white;
+    border-radius: 5px;
 }
 
 .aboutContact-header {
