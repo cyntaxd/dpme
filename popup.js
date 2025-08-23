@@ -31,9 +31,26 @@ buttons.forEach(button => {
     const id = button.getAttribute('data-id');
     popupContent.innerHTML = popupData[id];
     popup.classList.remove('hidden');
+
+    setTimeout(() => {
+      popup.classList.add('show-content');
+    }, 10);
   });
 });
 
 closeBtn.addEventListener('click', () => {
+  popup.classList.remove('show-content');
+  popup.classList.add('hidden');
+});
+
+// Close popup when clicking outside
+document.addEventListener('click', (event) => {
+  const isClickInsidePopup = popup.contains(event.target);
+  const isPopupButton = event.target.closest('.popup-btn');
+
+  if (!isClickInsidePopup && !isPopupButton && !popup.classList.contains('hidden')) {
+    popup.classList.remove('show-content');
     popup.classList.add('hidden');
-})
+  }
+});
+
