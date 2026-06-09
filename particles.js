@@ -1,19 +1,15 @@
-// Get the canvas and its context
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 
-// Set canvas dimensions
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Global variables for particles and interactions
 let particlesArray = [];
 const numberOfParticles = 100;  // Adjust as needed
 let lastScrollY = window.scrollY; // For detecting scroll movement
 let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 
-// Particle class definition
 class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
@@ -26,15 +22,12 @@ class Particle {
   }
 
   update(scrollDelta) {
-    // Move particle by inherent speed
     this.x += this.speedX;
     this.y += this.speedY;
 
-    // Apply scroll influence
     const scrollFactor = 0.05;
     this.y += scrollDelta * scrollFactor;
     
-    // --- Repulsion from Mouse ---
     const repelRadius = 100;
     const dx = this.x - mouseX;
     const dy = this.y - mouseY;
@@ -46,7 +39,6 @@ class Particle {
       this.y += (dy / distance) * force * repelMultiplier;
     }
     
-    // Smooth fading: update alpha with clamping and directional reversal
     this.alpha += this.fadeSpeed;
     if (this.alpha >= 1) {
       this.alpha = 1;
@@ -56,7 +48,6 @@ class Particle {
       this.fadeSpeed = Math.abs(this.fadeSpeed);
     }
 
-    // Wrap particles when moving off-screen
     if (this.x < 0) this.x = canvas.width;
     if (this.x > canvas.width) this.x = 0;
     if (this.y < 0) this.y = canvas.height;
@@ -65,7 +56,6 @@ class Particle {
 
   draw() {
     ctx.save();
-    // Calculate offset based on mouse position for parallax effect
     const mouseFactor = 0.05;
     const offsetX = (mouseX - canvas.width / 2) * mouseFactor;
     const offsetY = (mouseY - canvas.height / 2) * mouseFactor;
@@ -78,7 +68,6 @@ class Particle {
   }
 }
 
-// Initialize particles
 function initParticles() {
   particlesArray = [];
   for (let i = 0; i < numberOfParticles; i++) {
@@ -86,16 +75,13 @@ function initParticles() {
   }
 }
 
-// Animation Loop
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Calculate scroll delta
   const currentScrollY = window.scrollY;
   const scrollDelta = currentScrollY - lastScrollY;
   lastScrollY = currentScrollY;
 
-  // Update and draw each particle
   particlesArray.forEach(particle => {
     particle.update(scrollDelta);
     particle.draw();
@@ -104,19 +90,16 @@ function animateParticles() {
   requestAnimationFrame(animateParticles);
 }
 
-// Resize canvas on window resize
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   initParticles();
 });
 
-// Update mouse position for repulsion and parallax offset
 window.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
-// Start the particle system
 initParticles();
 animateParticles();
