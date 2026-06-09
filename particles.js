@@ -1,3 +1,7 @@
+const starImg = new Image();
+starImg.src = "star.png"; // your star image path
+
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 
@@ -55,17 +59,24 @@ class Particle {
   }
 
   draw() {
-    ctx.save();
-    const mouseFactor = 0.05;
-    const offsetX = (mouseX - canvas.width / 2) * mouseFactor;
-    const offsetY = (mouseY - canvas.height / 2) * mouseFactor;
-    ctx.globalAlpha = this.alpha;
-    ctx.beginPath();
-    ctx.arc(this.x + offsetX, this.y + offsetY, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = "#fff";
-    ctx.fill();
-    ctx.restore();
-  }
+  ctx.save();
+
+  const mouseFactor = 0.05;
+  const offsetX = (mouseX - canvas.width / 2) * mouseFactor;
+  const offsetY = (mouseY - canvas.height / 2) * mouseFactor;
+
+  ctx.globalAlpha = this.alpha;
+
+  const x = this.x + offsetX;
+  const y = this.y + offsetY;
+
+  const size = this.radius * 4; // adjust star size
+
+  ctx.drawImage(starImg, x - size / 2, y - size / 2, size, size);
+
+  ctx.restore();
+}
+
 }
 
 function initParticles() {
