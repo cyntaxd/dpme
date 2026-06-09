@@ -6,6 +6,10 @@ html {
     overscroll-behavior: none;
 }
 
+body {
+    overscroll-behavior: none;
+}
+
 #particles {
   position: fixed;
   top: 0;
