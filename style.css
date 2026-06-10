@@ -1,14 +1,10 @@
 html {
     background: radial-gradient(circle at top, #000000, #272829, #4a4949);
-    color: white;
+    color: rgb(46, 46, 46);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
-    overscroll-behavior: none;
 }
 
-body {
-    overscroll-behavior-y: none;
-}
 
 #particles {
   position: fixed;
