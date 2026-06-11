@@ -1,5 +1,5 @@
 html {
-    background: radial-gradient(circle at top, #000000, #272829, #4a4949);
+    background: linear-gradient(to bottom, #000000, #272829, #474747);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
@@ -13,7 +13,7 @@ html::before {
   height: 100vh;
   top: -100vh;
   background-color: #000000;
-  z-index: -1;
+  z-index: 250;
 }
 
 html::after {
@@ -24,7 +24,7 @@ html::after {
   height: 100vh;
   bottom: -100vh;
   background-color: #4a4949;
-  z-index: -1;
+  z-index: 250;
 }
 
 #particles {
